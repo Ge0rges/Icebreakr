@@ -1,6 +1,6 @@
 //
 //  IBPerson.m
-//  Icebreaker
+//  Icebreakr
 //
 //  Created by iD Student on 7/24/14.
 //
@@ -94,13 +94,13 @@
     //generate the message
     NSString *messageString;
     if (!secondBestMatch) {
-        messageString = [NSString stringWithFormat:@"Hello,\n You were matched with %@. You will find his/her profile picture attached so you can recognise him/her.\n Thank you for using Icebreaker,\n Have fun!\nP.S:You cannot reply to this email.jj", bestMatch.name];
+        messageString = [NSString stringWithFormat:@"Hello,\n You were matched with %@. You will find his/her profile picture attached so you can recognise him/her.\n Thank you for using Icebreakr,\n Have fun!\nP.S:You cannot reply to this email.jj", bestMatch.name];
     } else {
-        messageString = [NSString stringWithFormat:@"Hello,\n You were matched with %@ and %@. You will find there profile pictures attached so you can recognise them.\n Thank you for using Icebreaker,\n Have fun!\nP.S:You cannot reply to this email.", bestMatch.name, secondBestMatch.name];
+        messageString = [NSString stringWithFormat:@"Hello,\n You were matched with %@ and %@. You will find there profile pictures attached so you can recognise them.\n Thank you for using Icebreakr,\n Have fun!\nP.S:You cannot reply to this email.", bestMatch.name, secondBestMatch.name];
     }
     
     //declare the message
-    MGMessage *message = [[MGMessage alloc] initWithFrom:@"Icebreaker <icebreaker@ge0rges.com>" to:[NSString stringWithFormat:@"%@ <%@>", self.name, self.email] subject:[NSString stringWithFormat:@"Your matches for %@", self.partyName] body:messageString];
+    MGMessage *message = [[MGMessage alloc] initWithFrom:@"Icebreakr <Icebreakr@ge0rges.com>" to:[NSString stringWithFormat:@"%@ <%@>", self.name, self.email] subject:[NSString stringWithFormat:@"Your matches for %@", self.partyName] body:messageString];
     
     //add the images to the message
     if (bestMatch.photo) [message addImage:bestMatch.photo withName:@"First Person Photo" type:PNGFileType inline:YES];
